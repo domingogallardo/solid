@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Post {
+public class Post implements IPost {
     private Integer id;
     private String text;
     private Date date;
