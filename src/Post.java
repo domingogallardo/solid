@@ -4,10 +4,12 @@ public class Post {
     private Integer id;
     private String text;
     private Date date;
+    private String author;
 
-    public Post(String text) {
+    public Post(String text, String author) {
         this.text = text;
         this.date = new Date();
+        this.author = author;
     }
 
     public void setId(Integer id) {
@@ -19,6 +21,6 @@ public class Post {
     }
 
     public String print() {
-        return text + " (" + date + ")";
+        return author + " - " + text + " (" + date + ")";
     }
 }
