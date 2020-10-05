@@ -39,8 +39,15 @@ public class Blog {
         output = "** " + name + " **\n";
         int i = 0;
         for (String post: posts) {
-            output += authors.get(i) + " - ";
-            output += post + " (" + dates.get(i) + ")";
+            if (post.startsWith("IMG")) {
+                String[] sentences = post.split("---");
+                output += "<img>" + sentences[1] + "</img>";
+                output += authors.get(i) + " - ";
+                output += sentences[2] + " (" + dates.get(i) + ")";
+            } else {
+                output += authors.get(i) + " - ";
+                output += post + " (" + dates.get(i) + ")";
+            }
             output += "\n";
             i++;
         }
